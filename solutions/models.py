@@ -35,4 +35,71 @@ class Sparepart(models.Model):
     def search_spares(cls,search_term):
         parts = cls.objects.filter(part_name__icontains=search_term)
         return parts
+class Phone(models.Model):
+    '''
+    class to create instances of phones
+    '''
+    phone_image=CloudinaryField('image',blank=True,null=True)
+    phone_type = models.CharField(max_length=20)
+    phone_model=models.CharField(max_length=20)
+    description=models.CharField(max_length=100)
+    date_posted = models.DateTimeField(auto_now_add=True)
+
+
+
+    def _str_(self):
+        return self.phone_type
+
+    def save_phone(self):
+        self.save() 
+
+    def delete_phone(self):
+        self.delete() 
+
+        
+    @classmethod 
+    def get_phones(cls):
+       phones=Phone.objects.all()
+       return phones
+
+    @classmethod
+    def search_phones(cls,search_term):
+        parts = cls.objects.filter(phone_type__icontains=search_term)
+        return parts
+
+class Laptop(models.Model):
+    '''
+    class to create instances of phones
+    '''
+    lap_image=CloudinaryField('image',blank=True,null=True)
+    lap_type = models.CharField(max_length=20)
+    lap_model=models.CharField(max_length=20)
+    description=models.CharField(max_length=100)
+    date_posted = models.DateTimeField(auto_now_add=True)
+
+
+
+    def _str_(self):
+        return self.lap_type
+
+    def save_laptop(self):
+        self.save() 
+
+    def delete_laptop(self):
+        self.delete() 
+
+        
+    @classmethod 
+    def get_laptops(cls):
+       laptops=Laptop.objects.all()
+       return laptops
+
+    @classmethod
+    def search_laptops(cls,search_term):
+        parts = cls.objects.filter(lap_type__icontains=search_term)
+        return parts
+
+
+
+
 
