@@ -41,8 +41,8 @@ class Phone(models.Model):
     '''
     phone_image=CloudinaryField('image',blank=True,null=True)
     phone_type = models.CharField(max_length=20)
-    phone_model=models.CharField(max_length=20)
-    description=models.CharField(max_length=100)
+    phone_model=models.CharField(max_length=20,null=True)
+    description=models.TextField()
     date_posted = models.DateTimeField(auto_now_add=True)
     contact=models.CharField(max_length=40,null=True)
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='phone',primary_key=True)
@@ -76,8 +76,8 @@ class Laptop(models.Model):
     '''
     lap_image=CloudinaryField('image',blank=True,null=True)
     lap_type = models.CharField(max_length=20)
-    lap_model=models.CharField(max_length=20)
-    description=models.CharField(max_length=100)
+    lap_model=models.CharField(max_length=20,null=True)
+    description=models.TextField()
     date_posted = models.DateTimeField(auto_now_add=True)
     contact=models.CharField(max_length=40,null=True)
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='laptop',primary_key=True)

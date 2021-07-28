@@ -85,3 +85,6 @@ def new_laptop(request):
     else:
         form = LaptopForm()
     return render(request, 'new_laptop.html', {"form": form})
+
+def about(request):
+    return render(request, 'about.html')

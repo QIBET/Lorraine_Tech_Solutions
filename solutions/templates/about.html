@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content%}
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<title></title>
+    <link rel="stylesheet" href="{% static 'css/about.css'%}">
+	
+</head>
+<body>
+<h1 class="pv32 tac">Lorraine Tech Solutions</h1>
+<h2 style="font-size: 20px;color: purple;" class="mb32 tac"><em>A touch of professionalism</em></h2>
+
+<div class="flx pa16">
+  <div class="flx cmd6 cxs12 pa16">
+    <div class="flxc bs5">
+      <div class="pa32">
+        <h3 style="color: purple;"class="mb32"><b>What We Do</b></h3>
+        <p>Lorraine Tech Solutions provides professional repair and maintenance service for brands covering mobile phones, computers, tablets, appliances, lighting devices, smart living, new energy, and supply chain.We pride our selves in top-notch professionals on both hardware and Software with technicians with tons of experience and a great customer care team</p>
+      </div>
+      <a class="ma ml32 mb32 pa16 ph64 br33 bg-333333 fw7 c-ffffff tdn btn" href="/">Learn more</a>
+    </div>
+  </div>
+  <div class="flx cmd6 cxs12 pa16">
+    <div class="flxc bs5">
+      <div class="pa32">
+        <h3 style="color: purple;"class="mb32">Our Mission</h3>
+        <p>At Lorraine Tech Solutions our <strong>Mission</strong> is to be the first choice technical refuge for our clients. We ain to be regarded as a friend and a shoulder to lean on in times of gadget challenges. Given the dynamism of the field, we endeavour to always be at the top of our game with an eye for great customer experience.</p>
+      </div>
+      <a class="ma mr32 mb32 pa16 ph64 bss bw3 br33 fw7 c-333333 tdn btno" href="/">Learn more</a>
+    </div>
+  </div>
+</div>
+
+<div class="flx pa16">
+  <div class="flx cmd6 cxs12 pa16">
+    <div class="flxc bs5">
+      <img src="/static/images/cellrepair.jpeg" height="100px">
+      <div class="pa32">
+        <h3 style="color: purple;" class="mb32">Phone Repair</h3>
+        <p>We offer customized repair and maintenance of phones of all types, these include and not limited to screen replacement, mouth piece and ear piece replacement, software updates, phone hardware updates. We have also partnered with major companies to provide tailor-made services to their clients. These are smartphones users i.e Samsung,Huawei, iphone and Techno.We also sell genuine spareparts for both phones and laptops.<strong>Kindly click on the button below to submit details on the condition/status of your phone</strong> </p>
+      </div>
+      <a class="ma ml32 mb32 pa16 ph64 br6 bg-333333 fw7 c-ffffff tdn btn" href="{%url 'newphone'%}">Request Phone Fix</a>
+    </div>
+  </div>
+  <div class="flx cmd6 cxs12 pa16">
+    <div class="flxc bs5">
+      <img src="/static/images/laptoprepair.jpeg">
+      <div class="pa32">
+        <h3 style="color: purple;" class="mb32">Laptop Repair</h3>
+        <p>We offer high-level laptop repair at very competitive prices. We have the technical capacity to handle both hardware and softwware based challenges, you also get genuine parts from us for specific models. <br><strong>Kindly click on the link below to tell us your challenge.</strong></p>
+      </div>
+      <a class="ma mr32 mb32 pa16 ph64 bss bw3 br6 fw7 c-333333 tdn btno" href="{%url 'new_laptops'%}">Request Laptop Fix</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+{%endblock%}
