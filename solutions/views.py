@@ -2,7 +2,7 @@ from solutions.models import Sparepart
 from django.shortcuts import render
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from .forms import CreateUserForm
+from .forms import CreateUserForm, PhoneForm
 from django.contrib.auth import authenticate, login, logout
 
 
@@ -54,3 +54,19 @@ def logoutUser(request):
 def get_spares(request):
 	parts = Sparepart.get_spareparts()
 	return render(request, 'spares.html',{"parts":parts})
+
+def new_phone(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = PhoneForm(request.POST, request.FILES)
+        if form.is_valid():
+            phone = form.save(commit=False)
+            phone.user = current_user
+
+            phone.save()
+
+        return redirect('home')
+
+    else:
+        form = PhoneForm()
+    return render(request, 'new_phone.html', {"form": form})
