@@ -8,5 +8,6 @@ urlpatterns=[
     path('logout/',views.logoutUser,name="logout") ,
     path('spares/', views.get_spares,name='spares'),
     path('new_phone/', views.new_phone, name='newphone'),
+    path('new_laptops/', views.new_laptop, name='new_laptops'),
 
 ]

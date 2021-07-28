@@ -2,7 +2,7 @@ from solutions.models import Sparepart
 from django.shortcuts import render
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from .forms import CreateUserForm, PhoneForm
+from .forms import CreateUserForm, LaptopForm, PhoneForm
 from django.contrib.auth import authenticate, login, logout
 
 
@@ -70,3 +70,18 @@ def new_phone(request):
     else:
         form = PhoneForm()
     return render(request, 'new_phone.html', {"form": form})
+def new_laptop(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = LaptopForm(request.POST, request.FILES)
+        if form.is_valid():
+            laptop = form.save(commit=False)
+            laptop.user = current_user
+
+            laptop.save()
+
+        return redirect('home')
+
+    else:
+        form = LaptopForm()
+    return render(request, 'new_laptop.html', {"form": form})
