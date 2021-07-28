@@ -44,6 +44,7 @@ class Phone(models.Model):
     phone_model=models.CharField(max_length=20)
     description=models.CharField(max_length=100)
     date_posted = models.DateTimeField(auto_now_add=True)
+    contact=models.CharField(max_length=40,null=True)
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='phone',primary_key=True)
 
 
@@ -78,6 +79,7 @@ class Laptop(models.Model):
     lap_model=models.CharField(max_length=20)
     description=models.CharField(max_length=100)
     date_posted = models.DateTimeField(auto_now_add=True)
+    contact=models.CharField(max_length=40,null=True)
     user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='laptop',primary_key=True)
 
 
