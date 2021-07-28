@@ -1,4 +1,28 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content%}
-<h1>content coming soon</h1>
+<!DOCTYPE html>
+<html>
+    
+<head>
+	<title></title>
+    <link rel="stylesheet" href="{% static 'css/home.css'%}">
+	
+</head>
+<body>
+<div class="container">
+	<div class="split left">
+		<h1>PHONE FIX</h1>
+		<a href="{%url 'newphone'%}" class="btn">More</a>
+	</div>
+	<div class="split right">
+		<h1>LAPTOP FIX</h1>
+		<a href="{%url 'new_laptops'%}" class="btn">More</a>
+	</div>
+</div>
+{% block scripts %} 
+  <script type="text/javascript" src="{%static 'js/home.js'%}"></script>
+{% endblock %}
 {%endblock%}
+</body>
+</html>

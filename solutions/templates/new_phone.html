@@ -4,9 +4,14 @@
 
 
 {%block content%}
+<style>
+    body{
+        background-color: lavenderblush;
+    }
+</style>
 <div class="container">
     <h3 class="text-center" style="font-family: 'Kanit', sans-serif; padding-top:40px;">Add Phone Details<br><small style="color: blueviolet; font-size: small;">Kindly send us phone details with a little description of problem</small></h3>
-    <div class="col-sm-12 col-lg-6 m-auto card" style="background-color: beige;">
+    <div class="col-sm-12 col-lg-6 m-auto card" style="background-color:lightcyan;">
         <form action="{%url 'newphone'%}" method="post" enctype="multipart/form-data">
             <br>
             {%csrf_token%}

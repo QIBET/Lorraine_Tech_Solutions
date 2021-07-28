@@ -1,0 +1,138 @@
+:root {
+    --right-bg-color: rgba(87, 84, 236, 0.3);
+    --left-bg-color: rgb(43, 43, 43, 0.8);
+    --right-btn-color: rgba(87, 84, 236, 1);
+    --left-btn-color: rgba(28, 128, 28, 1);
+    --dark-color: #000000;
+    --light-color: #ffffff;
+    --major-side-width: 70%;
+    --minor-side-width: 30%;
+    --speed: 500ms;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  .container {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: #333;
+  }
+  
+  .split {
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+  }
+  
+  .split h1 {
+    color: var(--light-color);
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 3.5rem;
+    white-space: nowrap;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .split .btn {
+    width: 12rem;
+    height: 4rem;
+    border: 0.2rem var(--light-color) solid;
+    color: var(--light-color);
+    border-radius: 0.1rem;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.0rem;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .split .btn:hover {
+    cursor: pointer;
+  }
+  
+  .split.left {
+    left: 0;
+    background-image: url("/static/images/samsung.jpeg");
+    background-position: start;
+  }
+  
+  .split.left .btn:hover {
+    background-color: var(--left-btn-color);
+  }
+  
+  .split.left::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--left-bg-color);
+  }
+  
+  .split.right {
+    right: 0;
+    background-image: url("/static/images/hp.jpeg");
+    background-position: center;
+  }
+  
+  .split.right .btn:hover {
+    background-color: var(--right-btn-color);
+  }
+  
+  .split.right::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--right-bg-color);
+  }
+  
+  .hover-left .left,
+  .hover-right .right {
+    width: var(--major-side-width);
+    transition: width 300ms ease-in;
+  }
+  
+  .hover-left .right,
+  .hover-right .left {
+    width: var(--minor-side-width);
+    transition: width 300ms ease-in;
+  }
+  
+  .split.left,
+  .split.right,
+  .split.left::before,
+  .split.right::before {
+    transition: width var(--speed) ease-in-out;
+  }
+  
+  @media (max-width: 800px) {
+    .split h1 {
+      font-size: 2rem;
+    }
+  
+    .split .btn {
+      height: 1.5rem;
+      width: 8rem;
+      font-size: 1rem;
+    }
+  }
+  
