@@ -1,3 +1,4 @@
+from solutions.models import Sparepart
 from django.shortcuts import render
 from django.contrib import messages
 from django.shortcuts import render, redirect
@@ -49,3 +50,7 @@ def loginUser(request):
 def logoutUser(request):
 	logout(request)
 	return redirect('login')
+
+def get_spares(request):
+	parts = Sparepart.get_spareparts()
+	return render(request, 'spares.html',{"parts":parts})
