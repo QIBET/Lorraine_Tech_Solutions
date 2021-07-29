@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{% load bootstrap4 %}
+{% load static %}
+
+
+
+{{ block.super}}
+
+
+{% block content %}
+
+
+<div class="container-fluid" style='background-color: lavenderblush;'>
+    <div class="row">
+      {% for phone in phone_repairs %}
+        <div class="card m-4" style="width: 22rem;">
+          <img class="card-img-top" src="{{phone.phone_image.url}}" alt="Card image cap" height="200px">
+          <div class="card-body" style='background-color: lightcyan;' >
+            <p class="card-title" style="font-family: 'Sail', cursive;
+            font-family: 'Vast Shadow', cursive;"><b>Phone Type :</b> {{phone.phone_type}}</p>
+            <p class="card-text"><b>Phone_model:</b> {{phone.phone_model}}</p>
+            <p class="card-text"><b>Description:</b> {{phone.description}}</p>
+            <p class="card-text"><b>Date Posted:</b> {{phone.date_posted}}</p>
+            <p class="card-text"><b>Client Contact:</b> {{phone.contact}}</p>
+            <p class="card-text"><b>Client Name:</b> {{phone.user}}</p>
+
+
+          </div>
+        </div>
+      {%endfor%}
+    </div>
+</div>
+{%endblock%}
