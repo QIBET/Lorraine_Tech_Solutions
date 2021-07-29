@@ -10,7 +10,8 @@ urlpatterns=[
     path('new_phone/', views.new_phone, name='newphone'),
     path('new_laptops/', views.new_laptop, name='new_laptops'),
     path('about/', views.about, name='about'),
-    path('contact/',views.contact_us,name='contact')
-
+    path('contact/',views.contact_us,name='contact'),
+    path('laptops/',views.laptop_repair,name='laptops'),
+    path('phones/',views.phone_repair,name='phones'),
 
 ]

@@ -104,6 +104,14 @@ class Laptop(models.Model):
         parts = cls.objects.filter(lap_type__icontains=search_term)
         return parts
 
+#defining a simple class
+class Message(models.Model):
+    #integer field
+    test_result = models.PositiveIntegerField()
+
+    #string representation
+    def __str__(self):
+        return str(self.test_result)
 
 
 

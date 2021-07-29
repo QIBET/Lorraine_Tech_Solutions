@@ -94,8 +94,8 @@ def contact_us(request):
 
 def phone_repair(request):
 	phone_repairs= Phone.get_phones()
-	return render(request, 'spares.html',{"phone_repairs":phone_repairs})
+	return render(request, 'phones.html',{"phone_repairs":phone_repairs})
 
 def laptop_repair(request):
-	laptop_repairs= Laptop.get_phones()
-	return render(request, 'spares.html',{"phone_repairs":laptop_repairs})
+	laptop_repairs= Laptop.get_laptops()
+	return render(request, 'laptops.html',{"phone_repairs":laptop_repairs})
