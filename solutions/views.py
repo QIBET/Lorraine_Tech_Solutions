@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from .forms import CreateUserForm, LaptopForm, PhoneForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -55,6 +56,7 @@ def get_spares(request):
 	parts = Sparepart.get_spareparts()
 	return render(request, 'spares.html',{"parts":parts})
 
+@login_required (login_url="login")
 def new_phone(request):
     current_user = request.user
     if request.method == 'POST':
@@ -70,6 +72,8 @@ def new_phone(request):
     else:
         form = PhoneForm()
     return render(request, 'new_phone.html', {"form": form})
+
+@login_required (login_url="login")
 def new_laptop(request):
     current_user = request.user
     if request.method == 'POST':
