@@ -1,5 +1,5 @@
 {%extends 'base.html'%}
-{% load bootstrap4 %}
+{% load bootstrap3 %}
 {% load static %}
 
 
@@ -23,6 +23,7 @@
             <p class="card-text"><b>Date Posted:</b> {{phone.date_posted}}</p>
             <p class="card-text"><b>Client Contact:</b> {{phone.contact}}</p>
             <p class="card-text"><b>Client Name:</b> {{phone.user}}</p>
+            <button type="button" class="btn btn-outline-success">Notify Client</button>
 
 
           </div>

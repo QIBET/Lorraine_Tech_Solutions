@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 from django.utils import timezone 
 from django.dispatch import receiver
 from django.db.models.signals import post_save
+from twilio.rest import Client
+
 
 # Create your models here.
 class Sparepart(models.Model):
@@ -112,6 +114,22 @@ class Message(models.Model):
     #string representation
     def __str__(self):
         return str(self.test_result)
+    def save(self, *args, **kwargs):
+        #if test_result is less than 80 execute this
+        if self.test_result < 80:
+            #twilio code
+            account_sid = 'ACaeaf4bacd8228f9133b846bb56c8a164'
+            auth_token = 'dc5c1ffa32e82ec3ca906af1944e3241'
+            client = Client(account_sid, auth_token)
+
+            message = client.messages.create(
+                                        body=f'Hi, your gadget was successfully fixed, {self.test_result}. Great job',
+                                        from_='+16304739731',
+                                        to='0724835573' 
+                                    )
+
+            print(message.sid)
+        return super().save(*args, **kwargs)
 
 
 

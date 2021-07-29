@@ -14,7 +14,7 @@ def home(request):
 
 def register(request):
 	if request.user.is_authenticated:
-		return redirect('index')
+		return redirect('home')
 	else:
 		form = CreateUserForm()
 		if request.method == 'POST':
@@ -31,7 +31,7 @@ def register(request):
 		return render(request, 'registration/register.html', context)
 def loginUser(request):
 	if request.user.is_authenticated:
-		return redirect('index')
+		return redirect('home')
 	else:
 		if request.method == 'POST':
 			username = request.POST.get('username')
@@ -41,7 +41,7 @@ def loginUser(request):
 
 			if user is not None:
 				login(request, user)
-				return redirect('index')
+				return redirect('home')
 			else:
 				messages.info(request, 'Username or password is incorrect')
 
@@ -98,4 +98,4 @@ def phone_repair(request):
 
 def laptop_repair(request):
 	laptop_repairs= Laptop.get_laptops()
-	return render(request, 'laptops.html',{"phone_repairs":laptop_repairs})
+	return render(request, 'laptops.html',{"laptop_repairs":laptop_repairs})

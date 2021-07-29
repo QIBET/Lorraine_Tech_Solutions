@@ -1,5 +1,5 @@
 {%extends 'base.html'%}
-{% load bootstrap4 %}
+{% load bootstrap3 %}
 {% load static %}
 
 
@@ -12,14 +12,20 @@
 
 <div class="container-fluid" style='background-color: lavenderblush;'>
     <div class="row">
-      {% for part in parts %}
+      {% for lap in laptop_repairs %}
         <div class="card m-4" style="width: 22rem;">
-          <img class="card-img-top" src="{{part.part_image.url}}" alt="Card image cap" height="200px">
+          <img class="card-img-top" src="{{lap.lap_image.url}}" alt="Card image cap" height="200px">
           <div class="card-body" style='background-color: lightcyan;' >
             <p class="card-title" style="font-family: 'Sail', cursive;
-            font-family: 'Vast Shadow', cursive;"><b>Part Name :</b> {{part.part_name}}</p>
-            <p class="card-text"><b>Part Type:</b> {{part.part_type}}</p>
-            <p class="card-text"><b>Part Price:</b> Kshs: {{part.part_price}}</p>
+            font-family: 'Vast Shadow', cursive;"><b>Laptop Type :</b> {{lap.lap_type}}</p>
+            <p class="card-text"><b>Laptop Model:</b> {{lap.lap_model}}</p>
+            <p class="card-text"><b>Description:</b> {{lap.description}}</p>
+            <p class="card-text"><b>Date Posted:</b> {{lap.date_posted}}</p>
+            <p class="card-text"><b>Client Contact:</b> {{lap.contact}}</p>
+            <p class="card-text"><b>Client Name:</b> {{lap.user}}</p>
+            <button type="button" class="btn btn-outline-success">Notify Client</button>
+
+
           </div>
         </div>
       {%endfor%}

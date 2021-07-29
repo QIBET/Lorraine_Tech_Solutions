@@ -1,6 +1,7 @@
+
 {% load bootstrap3 %}
 
-<div class="navbar navbar-light" style="background-color: lightcyan;font-family: 'Lobster', cursive; font-size: 20px;" role="navigation"
+<div class="navbar navbar-light" style="background-color: #e3f2fd;" role="navigation"
 style="margin-bottom:0; border-bottom: 1px grey solid">
 <div class="container-fluid">
     <div class="navbar-header">
@@ -29,13 +30,10 @@ style="margin-bottom:0; border-bottom: 1px grey solid">
               <li><a href="{% url 'newphone' %}">Phone Repair</a></li>
               <li><a href="{% url 'new_laptops' %}">Laptop Repair</a></li>
 
-            </ul>
+          </ul>
             {% if user.username == 'admin' %}
-            <ul>
-              <li><a href="{% url 'laptops' %}" class="nav-item nav-link">Laptop Orders</a></li>
-              <li><a href="{% url 'phones' %}" class="nav-item nav-link">Phone Orders</a></li>
-            </ul>
-            
+            <li><a href="{{ url 'laptops%}" class="nav-item nav-link">Laptop Orders</a></li>
+            <li><a href="{% url 'phones' %}" class="nav-item nav-link">Phone Orders</a></li>
 
             {% else %}
             {% endif %}
