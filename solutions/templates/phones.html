@@ -9,13 +9,16 @@
 
 {% block content %}
 
+<div class="container">
 
-<div class="container-fluid" style='background-color: lavenderblush;'>
-    <div class="row">
-      {% for phone in phone_repairs %}
-        <div class="card m-4" style="width: 22rem;">
-          <img class="card-img-top" src="{{phone.phone_image.url}}" alt="Card image cap" height="200px">
-          <div class="card-body" style='background-color: lightcyan;' >
+  {% for phone in phone_repairs %}
+
+  <div class="card-columns">
+
+
+    <div class="col-md-3 col-sm-3 col-xs-3" style='background-color: lightcyan;'>
+        
+            <img src="{{phone.phone_image.url}}" class="img-responsive img-fluid img-thumbnail" style="width: 100%;height:250px" >
             <p class="card-title" style="font-family: 'Sail', cursive;
             font-family: 'Vast Shadow', cursive;"><b>Phone Type :</b> {{phone.phone_type}}</p>
             <p class="card-text"><b>Phone_model:</b> {{phone.phone_model}}</p>
@@ -24,11 +27,14 @@
             <p class="card-text"><b>Client Contact:</b> {{phone.contact}}</p>
             <p class="card-text"><b>Client Name:</b> {{phone.user}}</p>
             <button type="button" class="btn btn-outline-success">Notify Client</button>
-
-
-          </div>
-        </div>
-      {%endfor%}
     </div>
+   
+                       
+      {% endfor %}
+
+  </div>
+    
 </div>
-{%endblock%}
+   
+  
+  {%endblock%}

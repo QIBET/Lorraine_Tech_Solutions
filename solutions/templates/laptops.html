@@ -9,13 +9,16 @@
 
 {% block content %}
 
+<div class="container">
 
-<div class="container-fluid" style='background-color: lavenderblush;'>
-    <div class="row">
-      {% for lap in laptop_repairs %}
-        <div class="card m-4" style="width: 22rem;">
-          <img class="card-img-top" src="{{lap.lap_image.url}}" alt="Card image cap" height="200px">
-          <div class="card-body" style='background-color: lightcyan;' >
+  {% for lap in laptop_repairs %}
+
+  <div class="card-columns">
+
+
+    <div class="col-md-3 col-sm-3 col-xs-3" style='background-color: lightcyan;'>
+        
+            <img src="{{lap.lap_image.url}}" class="img-responsive img-fluid img-thumbnail" style="width: 100%;height:250px" >
             <p class="card-title" style="font-family: 'Sail', cursive;
             font-family: 'Vast Shadow', cursive;"><b>Laptop Type :</b> {{lap.lap_type}}</p>
             <p class="card-text"><b>Laptop Model:</b> {{lap.lap_model}}</p>
@@ -23,12 +26,15 @@
             <p class="card-text"><b>Date Posted:</b> {{lap.date_posted}}</p>
             <p class="card-text"><b>Client Contact:</b> {{lap.contact}}</p>
             <p class="card-text"><b>Client Name:</b> {{lap.user}}</p>
-            <button type="button" class="btn btn-outline-success">Notify Client</button>
-
-
-          </div>
-        </div>
-      {%endfor%}
+            <button type="button" class="btn btn-uccess">Notify Client</button>
     </div>
+   
+                       
+      {% endfor %}
+
+  </div>
+    
 </div>
-{%endblock%}
+   
+  
+  {%endblock%}
