@@ -11,7 +11,7 @@ A web application that manages tech fixes for Lorraine Tech solutions by allowin
  * Admin can view orders from various customers
  
  # Screenshot of application landing page
-![](static/images/mtaainfo.png?raw=true "LorraineTech")
+![](static/images/lorraine.png?raw=true "LorraineTech")
 
 # SetUp / Installation Requirements
 ### You need to have the following
