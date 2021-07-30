@@ -3,7 +3,7 @@
 # Description
 A web application that manages tech fixes for Lorraine Tech solutions by allowing customers to send in their phone and laptop issues for review and notified on successful completion
 # BDD [MVP]
-### As a User i would like;
+### Some of the products the application offers are;
  * Sign in with the application to start using some main parts.
  * View various spares offered by the company
  * Submit a request using a form for either phone or laptop to be fixed
